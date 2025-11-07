@@ -95,6 +95,31 @@ C:\Users\USERNAME>F:\SteamLibrary\steamapps\common\Blender folder\blender.exe -b
 
 ❗**It is here for example so you can see how exactly path should look like**❗
 
+## > ⚠️ How to Add Blender to PATH (User Variables) on Windows and Launch It Without Typing the Full Path Every Time:
+
+1-Open the Environment Variables window
+Press `Win + S` and type: `Edit environment variables for your account`
+
+2-Then in Advanced tab click on `Environment Variables` open it.
+
+3-Find your user Path variable
+In the `User variables for [your name]` section, locate `Path` → select it → click Edit…
+
+4-Add Blender’s folder
+Click `New` and paste the folder path where Blender is installed, for example: `C:\Program Files\Blender Foundation\Blender 4.2` or  `F:\SteamLibrary\steamapps\common\Blender`
+⚠️ Use the folder path, not the full blender.exe path.
+
+5-Save changes
+Click OK → OK → OK to close all windows.
+
+6-Restart your terminal
+Open a new Command Prompt, PowerShell, or any terminal.
+
+7-Test
+Run: `blender --version`
+
+If it prints Blender’s version, it works! Now you can launch Blender from the terminal simply by typing: `blender`
+
 ---
 
 ## 💤 Render with time out of 60 second before Sleep
