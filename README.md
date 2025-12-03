@@ -268,7 +268,7 @@ Example of repeating a command:
   [https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html](https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html)
 
 - 📺 My video tutorial on CMD rendering:  
-  [YouTube – ilisho]()
+  [YouTube – ilisho](https://www.youtube.com/watch?v=InmY5MwfzNQ)
 
 - 📺 Original Video tutorial on CMD rendering that i was inspired by:  
   [YouTube – Spencer Magnusson](https://www.youtube.com/watch?v=6RjCaf9noXo&list=LL&index=4&t=93s)
