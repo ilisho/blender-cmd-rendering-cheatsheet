@@ -273,6 +273,9 @@ Example of repeating a command:
 - 📺 Original Video tutorial on CMD rendering that i was inspired by:  
   [YouTube – Spencer Magnusson](https://www.youtube.com/watch?v=6RjCaf9noXo&list=LL&index=4&t=93s)
 
+## Related Repositories
+
+- [Shortcut Cheat Sheet Repo](https://github.com/ilisho/shortcuts-i-might-forget) — full collection of shortcuts i use and can forget
 
 ___
 
