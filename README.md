@@ -36,6 +36,7 @@
 -s 1                        # Start frame
 -e 46                       # End frame
 -f 34                       # Render a specific frame
+-o "file path/####"			# Render to specific folder (#### will look like 0001, 0002, ... ets. If want name use Frame_#### or anynameyoulike_####)
 --python-expr "..."         # Run Python in Blender (e.g., set samples)
 ```
 ### Examples:
@@ -184,6 +185,13 @@ Same example but using `blender` command instead of full path.
 `C:\Users\USERNAME>`
 ```bash
 blender -b F:\my_projects_folder\dark_forest\landing_v01.blend -S Scene_character --python-expr "import bpy; bpy.context.scene.cycles.samples = 1" -s 1 -e 46 -a && blender -b F:\my_projects_folder\dark_forest\landing_v01.blend -S Scene_character --python-expr "import bpy; bpy.context.scene.cycles.samples = 2000" -s 47 -e 300 -a && timeout /t 60 && rundll32.exe powrprof.dll,SetSuspendState 0,1,0
+```
+This example show hot to render multiple frame ranges from the same .blend file into separate output directories without duplicating scenes.
+The output path must be defined before `-a`, otherwise Blender will ignore it.
+
+`C:\Users\USERNAME>`
+```bash
+blender -b F:\my_projects_folder\dark_forest\landing_v01.blend -S Scene_character --python-expr "import bpy; bpy.context.scene.cycles.samples = 1" -s 1 -e 46 -o "D:\projects\demo\renders\part_01\####" -a && blender -b F:\my_projects_folder\dark_forest\landing_v01.blend -S Scene_character --python-expr "import bpy; bpy.context.scene.cycles.samples = 1" -s 60 -e 180 -o "D:\projects\demo\renders\part_02\####" -a  && rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 ```
 
 ---
