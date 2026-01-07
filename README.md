@@ -186,7 +186,7 @@ Same example but using `blender` command instead of full path.
 ```bash
 blender -b F:\my_projects_folder\dark_forest\landing_v01.blend -S Scene_character --python-expr "import bpy; bpy.context.scene.cycles.samples = 1" -s 1 -e 46 -a && blender -b F:\my_projects_folder\dark_forest\landing_v01.blend -S Scene_character --python-expr "import bpy; bpy.context.scene.cycles.samples = 2000" -s 47 -e 300 -a && timeout /t 60 && rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 ```
-This example show hot to render multiple frame ranges from the same .blend file into separate output directories without duplicating scenes.
+This example show how to render multiple frame ranges from the same .blend file into separate output directories without duplicating scenes.
 The output path must be defined before `-a`, otherwise Blender will ignore it.
 
 `C:\Users\USERNAME>`
