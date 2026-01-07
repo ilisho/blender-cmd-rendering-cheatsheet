@@ -32,11 +32,12 @@
 -a                          # Render full animation
 -b                          # Open Blender without UI
 -S, --scene <name>          # Set the active scene
-&&			    # Next task after finishing prev
+&&			    			# Next task after finishing prev
 -s 1                        # Start frame
 -e 46                       # End frame
 -f 34                       # Render a specific frame
--o "file path/####"			# Render to specific folder (#### will look like 0001, 0002, ... ets. If want name use Frame_#### or anynameyoulike_####)
+-o "file path/####"			# Render to specific folder (#### will look like 0001, 0002, ...
+							ets. If want name use Frame_#### or anynameyoulike_####)
 --python-expr "..."         # Run Python in Blender (e.g., set samples)
 ```
 ### Examples:
