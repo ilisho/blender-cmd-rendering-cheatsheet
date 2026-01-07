@@ -36,8 +36,7 @@
 -s 1                        # Start frame
 -e 46                       # End frame
 -f 34                       # Render a specific frame
--o "file path/####"			# Render to specific folder (#### will look like 0001, 0002, ...
-							ets. If want name use Frame_#### or anynameyoulike_####)
+-o "file path/####"			# Render to specific folder [#### outputs sequential frame numbers (0001, 0002, ...).  Use Frame_#### or any_custom_name_#### to add a filename prefix.]
 --python-expr "..."         # Run Python in Blender (e.g., set samples)
 ```
 ### Examples:
