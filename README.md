@@ -17,6 +17,7 @@
 - [🪟 PowerShell Version](#-powershell-version)
 - [🍎 macOS Version](#-macos-version)
 - [⏱️ Misc CMD Commands](#️-misc-cmd-commands)
+- [🛡️ iLiSHO RENDER SENTINEL v1.2](#-ilisho-render-sentinel-v1.2)
 - [🧠 Tips for Using CMD](#-tips-for-using-cmd)
 - [🧠 CMD 101 good to know](#-cmd-101-good-to-know)
 - [📚 Helpful Links](#-helpful-links)
@@ -239,7 +240,29 @@ No need for extra quotes unless paths have spaces.
 > ⚠️ Can cause Windows errors if used improperly.
 
 ---
+## 🛡️ iLiSHO RENDER SENTINEL v1.2
+> **Smart Sleep Protocol for Heavy Render Workflows (Blender, DaVinci Resolve, FFmpeg)**
 
+**iLiSHO RENDER SENTINEL** is a lightweight, zero-dependency PowerShell monitoring agent designed for 3D artists and video editors. It continuously tracks system activity and automatically puts your Windows PC to sleep only after your render batch is genuinely finished.
+
+---
+
+### ⚡ Key Features
+* 📊 **Multi-Hardware Tracking:** Real-time monitoring of CPU %, GPU 3D engine %, RAM usage, and Physical Disk Write speed (MB/s).
+* 🛡️ **Anti-False-Positive Streak System:** Prevents premature shutdowns during scene compilation, VRAM flushes, or frame-by-frame pauses.
+* 🎛️ **Interactive HUD & ASCII UI:** Preset threshold modes (Standard, Strict, Custom) with a retro-terminal interface.
+* 🚀 **Zero Dependencies:** Pure PowerShell string, runs out of the box without installing external modules.
+
+---
+### ⚙️ Quick Start
+
+1. Open **PowerShell** on your Windows machine.
+2. Paste and run the **iLiSHO RENDER SENTINEL** one-liner:
+
+```powershell
+Clear-Host; $y = [ConsoleColor]::Yellow; $g = [ConsoleColor]::Green; Write-Host " ╔════════════════════════════════════════════════════════════╗" -ForegroundColor $y; Write-Host " ║  ██╗                                                       ║" -ForegroundColor $y; Write-Host " ║  ██║   ██╗ ██╗     ██╗                                     ║" -ForegroundColor $y; Write-Host " ║  ██║   ██║ ██║     ██║      iLiSHO RENDER SENTINEL         ║" -ForegroundColor $y; Write-Host " ║  ██║   ██║ ██║     ██║      v1.2 // Sleep Protocol         ║" -ForegroundColor $y; Write-Host " ║  ██║   ██║ ███████╗██║                                     ║" -ForegroundColor $y; Write-Host " ║  ██║   ╚═╝ ╚══════╝╚═╝      Target: DaVinci / Blender      ║" -ForegroundColor $y; Write-Host " ║  ██║  ███████╗██╗  ██╗██████╗                              ║" -ForegroundColor $y; Write-Host " ║  ██║  ██╔════╝██║  ██║██╔═══██╗  Status: CONFIGURING       ║" -ForegroundColor $y; Write-Host " ║  ██║  ███████╗███████║██║   ██║                            ║" -ForegroundColor $y; Write-Host " ║  ██║  ╚════██║██╔══██║██║   ██║                            ║" -ForegroundColor $y; Write-Host " ║  ██║  ███████║██║  ██║╚██████╔╝                            ║" -ForegroundColor $y; Write-Host " ║  ██████████████████████████████                            ║" -ForegroundColor $y; Write-Host " ╚════════════════════════════════════════════════════════════╝" -ForegroundColor $y; Write-Host ""; Write-Host " [⚙ SELECT MONITORING PRESET]" -ForegroundColor $y; Write-Host " [ENTER / 'y']  Standard (Default) -> CPU < 25%, GPU < 15%, Disk < 5.0 MB/s"; Write-Host " [1]            Strict Mode        -> CPU < 15%, GPU < 10%, Disk < 1.0 MB/s"; Write-Host " [2]            Custom Setup       -> Enter manual values"; Write-Host ""; $opt = Read-Host " Option [Press ENTER for Default]"; if ($opt -eq '1') { $cpuTh = 15; $gpuTh = 10; $diskTh = 1.0; $pName = "STRICT" } elseif ($opt -eq '2') { $cpuTh = [int](Read-Host " Enter CPU max % threshold"); $gpuTh = [int](Read-Host " Enter GPU max % threshold"); $diskTh = [double](Read-Host " Enter Disk Write max MB/s"); $pName = "CUSTOM" } else { $cpuTh = 25; $gpuTh = 15; $diskTh = 5.0; $pName = "STANDARD" }; Write-Host ""; Write-Host " [✓] Sentinel Armed! Mode: $pName (CPU < $cpuTh%, GPU < $gpuTh%, Disk < $diskTh MB/s)" -ForegroundColor $g; Write-Host " Starting monitoring in 3 seconds..." -ForegroundColor $y; Start-Sleep -Seconds 3; $s=0; $frames = @('⠋','⠙','⠹','⠸','⠼','⠴','⠦','⠧','⠇','⠏'); while ($true) { $c = [math]::Round((Get-Counter '\Processor(_Total)\% Processor Time').CounterSamples.CookedValue); $g = [math]::Round((Get-CimInstance Win32_PerfFormattedData_GPUPerformanceCounters_GPUEngine | Where-Object Name -like '*3D*' | Measure-Object -Property UtilizationPercentage -Sum).Sum); $os = Get-CimInstance Win32_OperatingSystem; $r = [math]::Round((1 - ($os.FreePhysicalMemory / $os.TotalVisibleMemorySize)) * 100); $d = [math]::Round((Get-Counter '\PhysicalDisk(_Total)\Disk Write Bytes/sec').CounterSamples.CookedValue / 1MB, 1); $time = Get-Date -Format 'HH:mm:ss'; if ($c -lt $cpuTh -and $g -lt $gpuTh -and $d -lt $diskTh) { $s++; Write-Host "`n[$time] ⏳ Quiet mode... CPU: $c\% \vert{} GPU:$g% | RAM: $r\% \vert{} Disk:$d MB/s (Streak: $s/8)"; if ($s -ge 8) { Write-Host "`n💤 2 minutes of total idle! Render finished. Going to sleep in 15 seconds... Goodnight!"; Start-Sleep -Seconds 15; rundll32.exe powrprof.dll,SetSuspendState 0,1,0; break } } else { if ($s -gt 0) { Write-Host "`n[$time] 🔄 Activity spike! CPU: $c% | GPU: $g\% \vert{} Disk:$d MB/s. Resetting streak..." } else { Write-Host "`n[$time] ⚙ RENDER ACTIVE | CPU: $c% | GPU: $g% | RAM: $r% | Disk: $d MB/s" }; $s = 0 }; for ($i = 0; $i -lt 75; $i++) { $f = $frames[$i % $frames.Length]; Write-Host -NoNewline "`r $f Sentinel active ($pName)... Monitoring render stream [$($i + 1)/75]"; Start-Sleep -Milliseconds 200 }; Write-Host -NoNewline "`r                                                                      `r" }
+```
+---
 ## 🧠 Tips for Using CMD
 
 - **Copying Text:**  
