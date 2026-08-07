@@ -17,7 +17,7 @@
 - [🪟 PowerShell Version](#-powershell-version)
 - [🍎 macOS Version](#-macos-version)
 - [⏱️ Misc CMD Commands](#️-misc-cmd-commands)
-- [⏱️ iLiSHO RENDER SENTINEL v1.2](#-ilisho-render-sentinel-v12)
+- [⏱️ iLiSHO RENDER SENTINEL](#-ilisho-render-sentinel)
 - [🧠 Tips for Using CMD](#-tips-for-using-cmd)
 - [🧠 CMD 101 good to know](#-cmd-101-good-to-know)
 - [📚 Helpful Links](#-helpful-links)
@@ -240,7 +240,7 @@ No need for extra quotes unless paths have spaces.
 > ⚠️ Can cause Windows errors if used improperly.
 
 ---
-## ⏱️ iLiSHO RENDER SENTINEL v1.2
+## ⏱️ iLiSHO RENDER SENTINEL
 > **Smart Sleep Protocol for Heavy Render Workflows (Blender, DaVinci Resolve, FFmpeg)**
 
 **iLiSHO RENDER SENTINEL** is a lightweight, zero-dependency PowerShell monitoring agent designed for 3D artists and video editors. It continuously tracks system activity and automatically puts your Windows PC to sleep only after your render batch is genuinely finished.
