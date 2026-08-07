@@ -241,6 +241,8 @@ No need for extra quotes unless paths have spaces.
 
 ---
 ## ⏱️ iLiSHO RENDER SENTINEL
+
+### Description:
 > **Smart Sleep Protocol for Heavy Render Workflows (Blender, DaVinci Resolve, FFmpeg)**
 
 **iLiSHO RENDER SENTINEL** is a lightweight, zero-dependency PowerShell monitoring agent designed for 3D artists and video editors. It continuously tracks system activity and automatically puts your Windows PC to sleep only after your render batch is genuinely finished.
