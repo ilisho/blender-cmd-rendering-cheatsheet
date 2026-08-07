@@ -248,15 +248,12 @@ No need for extra quotes unless paths have spaces.
 
 **iLiSHO RENDER SENTINEL** is a lightweight, zero-dependency PowerShell monitoring agent designed for 3D artists and video editors. It continuously tracks system activity and automatically puts your Windows PC to sleep only after your render batch is genuinely finished.
 
----
-
 ### ⚡ Key Features
 * 📊 **Multi-Hardware Tracking:** Real-time monitoring of CPU %, GPU 3D engine %, RAM usage, and Physical Disk Write speed (MB/s).
 * 🛡️ **Anti-False-Positive Streak System:** Prevents premature shutdowns during scene compilation, VRAM flushes, or frame-by-frame pauses.
 * 🎛️ **Interactive HUD & ASCII UI:** Preset threshold modes (Standard, Strict, Custom) with a retro-terminal interface.
 * 🚀 **Zero Dependencies:** Pure PowerShell string, runs out of the box without installing external modules.
 
----
 ### ⚙️ Quick Start
 
 1. Open **PowerShell** on your Windows machine.
