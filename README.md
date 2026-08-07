@@ -17,7 +17,7 @@
 - [🪟 PowerShell Version](#-powershell-version)
 - [🍎 macOS Version](#-macos-version)
 - [⏱️ Misc CMD Commands](#️-misc-cmd-commands)
-- [🛡️ iLiSHO RENDER SENTINEL v1.2](#-ilisho-render-sentinel-v1.2)
+- [🛡️ iLiSHO RENDER SENTINEL v1.2](#ilisho-render-sentinel-v12)
 - [🧠 Tips for Using CMD](#-tips-for-using-cmd)
 - [🧠 CMD 101 good to know](#-cmd-101-good-to-know)
 - [📚 Helpful Links](#-helpful-links)
