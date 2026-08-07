@@ -17,7 +17,7 @@
 - [🪟 PowerShell Version](#-powershell-version)
 - [🍎 macOS Version](#-macos-version)
 - [⏱️ Misc CMD Commands](#️-misc-cmd-commands)
-- [⏱️ iLiSHO RENDER SENTINEL](#ilisho-sentinel)
+- [🛡️ iLiSHO RENDER SENTINEL](#ilisho-sentinel)
 - [🧠 Tips for Using CMD](#-tips-for-using-cmd)
 - [🧠 CMD 101 good to know](#-cmd-101-good-to-know)
 - [📚 Helpful Links](#-helpful-links)
@@ -241,7 +241,7 @@ No need for extra quotes unless paths have spaces.
 
 ---
 <a id="ilisho-sentinel"></a>
-## ⏱️ iLiSHO RENDER SENTINEL
+## 🛡️ iLiSHO RENDER SENTINEL
 
 ### Description:
 > **Smart Sleep Protocol for Heavy Render Workflows (Blender, DaVinci Resolve, FFmpeg)**
